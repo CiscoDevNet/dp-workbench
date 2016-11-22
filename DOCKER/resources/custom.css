@@ -1,0 +1,68 @@
+span.inline > img { display: inline; margin-top: 0px; border: solid 1px #A0A0A0; border-radius: 5px; }
+
+code {
+    color: #c7254e !important;
+    background-color: #f9f2f4 !important;
+}
+
+
+/*
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+@import url('https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css');
+*/
+
+.my-notify-info::first-letter, .my-notify-success::first-letter, .my-notify-warning::first-letter, .my-notify-error::first-letter {
+    font-family: FontAwesome;
+    font-size: 3em;
+    float: left;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.my-notify-info, .my-notify-success, .my-notify-warning, .my-notify-error {
+    border-radius: .25em;
+    padding: 10px;
+    margin-top: 10px;
+    display: block;
+    min-height: 70px;
+}
+/*
+//.my-notify-info::before, .my-notify-success::before, .my-notify-warning::before, .my-notify-error::before {
+//    speak: none;
+//}
+*/
+.my-notify-info::after, .my-notify-success::after, .my-notify-warning::after, .my-notify-error::after {
+    content: " ";
+    clear: left;
+}
+.my-notify-info::before {
+    font-family: FontAwesome;
+    content:"\f05a";
+}
+.my-notify-success::before {
+    content:'\f00c';
+}
+.my-notify-warning::before {
+    content:'\f071';
+}
+.my-notify-error::before {
+    content:'\f057';
+}
+.my-notify-info {
+    color: #00529B;
+    background-color: #BDE5F8;
+}
+.my-notify-success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+.my-notify-warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+.my-notify-error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+

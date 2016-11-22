@@ -1,0 +1,16 @@
+{
+  "load_extensions": {
+    "contrib_nbextensions_help_item/main": false,
+    "highlighter/highlighter": true,
+    "code_font_size/code_font_size": true,
+    "search-replace/main": false,
+    "freeze/main": false,
+    "table_beautifier/main": true,
+    "toc2/main": false,
+    "jupyter-js-widgets/extension": true
+  },
+  "toc2": {
+    "toc_cell": true,
+    "sideBar": false
+  }
+}

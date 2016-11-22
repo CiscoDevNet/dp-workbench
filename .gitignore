@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+BACKUP
+.vagrant
+.ipynb_checkpoints
+.DS_Store
