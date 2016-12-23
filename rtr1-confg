@@ -124,6 +124,10 @@ cWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ==
 exit
 !
 !
+interface loopback99
+ no ip address
+ no shutd
+!
 interface GigabitEthernet1
  ip address dhcp
  negotiation auto
