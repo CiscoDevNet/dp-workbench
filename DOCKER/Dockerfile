@@ -18,8 +18,6 @@ RUN pip3 install ipywidgets==6.0.0.beta2 jupyter requests ncclient netaddr argpa
 
 COPY images/devnet-logo.png /usr/lib/python3.5/site-packages/notebook/static/base/images/logo.png
 
-RUN touch /tmp/gag5
-
 USER docker
 WORKDIR $HOME
 RUN mkdir -p $HOME/$BOOKS && \
@@ -30,7 +28,8 @@ RUN mkdir -p $HOME/$BOOKS && \
     mkdir -p $HOME/$BOOKS/tmp && \
     jupyter nbextension enable --py widgetsnbextension && \
     jupyter contrib nbextension install --user && \
-    echo "c.NotebookApp.ip = '*'" >>.jupyter/jupyter_notebook_config.py
+    echo "c.NotebookApp.ip = '*'" >>.jupyter/jupyter_notebook_config.py && \
+    echo "c.NotebookApp.token = ''" >>.jupyter/jupyter_notebook_config.py
 
 COPY resources/custom.css $HOME/.jupyter/custom/
 COPY resources/notebook.json $HOME/.jupyter/nbconfig/
