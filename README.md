@@ -64,16 +64,18 @@ Point your browser on your local machine to `http://localhost:8888`. Everything 
 ## Docker commands
 
 - Run the container without Volume (e.g. readonly files)
-    `docker run -p8888:8888 -d jupyter`
+    `docker run -p8888:8888 -d dp-workbench`
 
 - Run the container with the Volume (need to build the image again
   after changing files)
-    `docker run -p8888:8888 -v$(pwd):/home/docker/notebooks -d jupyter`
+    `docker run -p8888:8888 -v$(pwd):/home/docker/notebooks -d dp-workbench`
 
 - Execute a shell into the container
     `docker exec -it -u 0 ${CONTAINER_ID} /bin/sh`
 
 - Build the image
-    `docker build . -t jupyter`
+    `docker build . -t dp-workbench`
 
+- When building in a lab that requires a proxy:
+    docker build . -t dp-workbench --build-arg http_proxy=$http_proxy
 

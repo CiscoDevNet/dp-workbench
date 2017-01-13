@@ -8,8 +8,12 @@ MAINTAINER Ralph Schmieder <rschmied@cisco.com>
 # install package dependencies
 RUN apk add --update alpine-sdk python3-dev libffi-dev openssl-dev libxml2-dev libxslt-dev linux-headers
 
+ARG http_proxy
 ENV HOME /home/docker
 ENV BOOKS notebooks
+ENV HTTP_PROXY=$http_proxy
+ENV HTTPS_PROXY=$http_proxy
+ENV no_proxy "localhost,127.0.0.1,172.20.20.0/24"
 
 RUN pip3 install ipywidgets==6.0.0.beta2 jupyter requests ncclient netaddr argparse pyang jupyter_contrib_nbextensions && \
     pip3 install git+https://github.com/rschmied/wsma_python.git && \
@@ -33,6 +37,7 @@ RUN mkdir -p $HOME/$BOOKS && \
 
 COPY resources/custom.css $HOME/.jupyter/custom/
 COPY resources/notebook.json $HOME/.jupyter/nbconfig/
+COPY resources/tree.json $HOME/.jupyter/nbconfig/
 COPY resources/ned-vlan.html $HOME/$BOOKS/tmp/
 COPY START-HERE.ipynb $HOME/$BOOKS/
 COPY sections $HOME/$BOOKS/sections/
