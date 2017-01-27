@@ -22,6 +22,11 @@ RUN pip3 install ipywidgets==6.0.0.beta2 jupyter requests ncclient netaddr argpa
 
 COPY images/devnet-logo.png /usr/lib/python3.5/site-packages/notebook/static/base/images/logo.png
 
+# remove the cluster tab from the workbook
+COPY resources/tree.patch /tmp
+WORKDIR /
+RUN patch -p1 </tmp/tree.patch
+
 USER docker
 WORKDIR $HOME
 RUN mkdir -p $HOME/$BOOKS && \
