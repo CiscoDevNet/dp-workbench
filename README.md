@@ -44,16 +44,16 @@ The next steps are required to prepare configuration disks for the routers and t
 - Change into the DOCKER directory
 - Build the container using 
 
-        docker build . -t jupyter
+        docker build . -t dp-workbench
 
     This will take a while. The resulting image should be around 400MB in size.
 - Run the container. If you want to make the content read-only then don't provide a volume. Otherwise providing the DOCKER directory as the volume enables to edit the content. Additional build is required to update files in container image if content is changed.
 
-        docker run -p8888:8888 -v$(pwd):/home/docker/notebooks -d jupyter
+        docker run -p8888:8888 -v$(pwd):/home/docker/notebooks -d dp-workbench
 
     The above command runs the container with a mapped volume. 
 
-        docker run -p8888:8888 --name workbench -d jupyter
+        docker run -p8888:8888 --name workbench -d dp-workbench
 
     This command runs without a mapped volume, therefore using the content from *within* the container as read-only content. It also assigns the name `workbench` to it to refer to the container.
     
@@ -77,5 +77,5 @@ Point your browser on your local machine to `http://localhost:8888`. Everything 
     `docker build . -t dp-workbench`
 
 - When building in a lab that requires a proxy:
-    docker build . -t dp-workbench --build-arg http_proxy=$http_proxy
+    `docker build . -t dp-workbench --build-arg http_proxy=$http_proxy`
 
