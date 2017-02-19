@@ -15,7 +15,7 @@ ENV HTTP_PROXY=$http_proxy
 ENV HTTPS_PROXY=$http_proxy
 ENV no_proxy "localhost,127.0.0.1,172.20.20.0/24"
 
-RUN pip3 install ipywidgets==6.0.0.beta2 jupyter requests ncclient netaddr argparse pyang jupyter_contrib_nbextensions && \
+RUN pip3 install ipywidgets jupyter requests ncclient netaddr argparse pyang jupyter_contrib_nbextensions && \
     pip3 install git+https://github.com/rschmied/wsma_python.git && \
     ln -s /usr/bin/python3 /usr/bin/python && \
     adduser -h $HOME -D docker docker
