@@ -19,6 +19,8 @@ This is a rough guideline how to bring up / prepare the entire environment. It h
 - Clone the `iso-xrv-x64-vbox` repository [from GitHub](https://github.com/ios-xr/iosxrv-x64-vbox)
 - IOS XE image from Cisco.com (e.g. [here](https://software.cisco.com/download/type.html?mdfid=284364978&catid=null), then go to *IOS XE Software* and download the Denali-16.3.2 .iso file in the *Latest* tree branch, ~350MB in size)
 
+> *Note:* Version numbers mentioned were the ones that have been used when testing / creating the environment. Upgrading to latest code of the various components might simply work -- ymmv. Recommend to stick with 16.3.2 for the time being, though. Proper RESTCONF support should be included with 16.6.
+
 ## Building the Vagrant Box
 Go to the directory where you cloned the `iso-xrv-x64-vbox` repository. Start the Vagrant box image build by running the following command
 
